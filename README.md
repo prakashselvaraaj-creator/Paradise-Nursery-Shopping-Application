@@ -1,11 +1,10 @@
-
-# 🌿 Paradise Nursery — Shopping Application
+# 🌿 e-plantShopping
 
 A beautifully designed **React** front-end shopping application for browsing and purchasing premium indoor houseplants. Built as a fully functional SPA (Single Page Application) with a shopping cart powered by Redux Toolkit.
 
 ## Overview
 
-Paradise Nursery lets customers browse a curated catalogue of houseplants, add items to a shopping cart, and manage their order before checkout — all within a sleek, dark-green themed interface.
+e-plantShopping lets customers browse a curated catalogue of houseplants, add items to a shopping cart, and manage their order before checkout — all within a sleek, dark-green themed interface.
 
 ## Features
 

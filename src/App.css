@@ -1,5 +1,5 @@
 /* ============================================================
-   App.css — Paradise Nursery Landing Page Background & Layout
+   App.css — e-plantShopping Landing Page Background & Layout
    ============================================================ */
 
 /* ── Landing Page ── */
@@ -11,7 +11,7 @@
   justify-content: center;
   overflow: hidden;
 
-  /* Background image for the Paradise Nursery landing page */
+  /* Background image for the e-plantShopping landing page */
   background-image: url('/hero_background.png');
   background-size: cover;
   background-position: center;

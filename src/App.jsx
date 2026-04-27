@@ -6,7 +6,7 @@ import ProductList from './ProductList';
 import CartItem from './CartItem';
 import './App.css';
 
-/* ── Landing Page (Paradise Nursery home) ── */
+/* ── Landing Page (e-plantShopping home) ── */
 function LandingPage() {
   return (
     <main className="landing-page">
@@ -24,8 +24,8 @@ function LandingPage() {
 
         {/* Company name */}
         <h1 className="landing-title">
-          <span className="title-line1">Paradise</span>
-          <span className="title-line2">Nursery</span>
+          <span className="title-line1">e-plant</span>
+          <span className="title-line2">Shopping</span>
         </h1>
 
         {/* About the company */}

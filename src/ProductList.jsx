@@ -202,7 +202,7 @@ function Navbar() {
     <header className="pl-navbar" role="banner">
       <div className="pl-navbar-brand">
         <span aria-hidden="true">🌿</span>
-        <Link to="/" className="pl-navbar-logo">Paradise Nursery</Link>
+        <Link to="/" className="pl-navbar-logo">e-plantShopping</Link>
       </div>
       <nav className="pl-navbar-links" aria-label="Main navigation">
         <Link to="/"       className="pl-nav-link" id="nav-home">Home</Link>

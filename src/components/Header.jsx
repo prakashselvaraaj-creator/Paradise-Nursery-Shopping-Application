@@ -12,7 +12,7 @@ export default function Header() {
     <header className="header">
       <div className="header-brand">
         <span className="header-leaf">🌿</span>
-        <Link to="/products" className="header-title">Paradise Nursery</Link>
+        <Link to="/products" className="header-title">e-plantShopping</Link>
       </div>
       <nav className="header-nav">
         {isCart ? (
