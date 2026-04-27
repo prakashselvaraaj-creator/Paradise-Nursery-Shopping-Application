@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import AboutUs from './AboutUs';
@@ -7,7 +8,7 @@ import CartItem from './CartItem';
 import './App.css';
 
 /* ── Landing Page (e-plantShopping home) ── */
-function LandingPage() {
+function LandingPage({ onGetStartedClick }) {
   return (
     <main className="landing-page">
       <div className="landing-overlay" />
@@ -33,14 +34,14 @@ function LandingPage() {
           <AboutUs />
         </div>
 
-        {/* Get Started button linking to the product page */}
-        <Link to="/plants" className="get-started-btn" id="get-started-btn">
+        {/* Get Started button with state toggle */}
+        <button className="get-started-btn" id="get-started-btn" onClick={onGetStartedClick}>
           Get Started
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
                style={{ width: 18, height: 18 }} aria-hidden="true">
             <path d="M5 12h14M12 5l7 7-7 7" />
           </svg>
-        </Link>
+        </button>
       </div>
 
       {/* Scroll hint */}
@@ -56,16 +57,25 @@ function LandingPage() {
 
 /* ── Root App with Routing ── */
 function App() {
+  const [showProductList, setShowProductList] = useState(false);
+
+  const handleGetStartedClick = () => {
+    setShowProductList(true);
+  };
+
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/"       element={<LandingPage />} />
-          <Route path="/plants" element={<ProductList />} />
-          <Route path="/cart"   element={<CartItem />} />
-          {/* Redirect any unknown path to home */}
-          <Route path="*"       element={<Navigate to="/" replace />} />
-        </Routes>
+        <div className="App">
+          {!showProductList ? (
+            <LandingPage onGetStartedClick={handleGetStartedClick} />
+          ) : (
+            <Routes>
+              <Route path="/" element={<ProductList />} />
+              <Route path="/cart" element={<CartItem />} />
+            </Routes>
+          )}
+        </div>
       </BrowserRouter>
     </Provider>
   );

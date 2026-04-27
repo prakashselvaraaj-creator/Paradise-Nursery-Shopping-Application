@@ -39,8 +39,16 @@ export default function CartItem() {
   const items = useSelector((state) => state.cart.items);
 
   /* Totals */
-  const totalQty  = items.reduce((sum, i) => sum + i.quantity, 0);
-  const totalCost = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const calculateTotalAmount = () => {
+    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+  };
+
+  const calculateTotalCost = (item) => {
+    return item.price * item.quantity;
+  };
+
+  const totalQty = items.reduce((sum, i) => sum + i.quantity, 0);
+  const totalCost = calculateTotalAmount();
 
   /* Handlers */
   const handleIncrease = (id, currentQty) =>
@@ -120,7 +128,7 @@ export default function CartItem() {
                     <p className="ci-item-subtotal">
                       Total:{' '}
                       <strong className="ci-subtotal-val">
-                        ${(item.price * item.quantity).toFixed(2)}
+                        ${calculateTotalCost(item).toFixed(2)}
                       </strong>
                     </p>
                   </div>
@@ -183,7 +191,7 @@ export default function CartItem() {
                       <span className="ci-order-qty"> × {item.quantity}</span>
                     </span>
                     <span className="ci-order-price">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      ${calculateTotalCost(item).toFixed(2)}
                     </span>
                   </div>
                 ))}
