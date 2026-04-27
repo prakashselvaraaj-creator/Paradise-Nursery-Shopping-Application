@@ -1,0 +1,53 @@
+.about-us {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #7de87d;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.about-description {
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  color: #a8c8a0;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.about-description strong {
+  color: #c8f0b0;
+}
+
+.about-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.about-value {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(86, 211, 100, 0.08);
+  border: 1px solid rgba(86, 211, 100, 0.18);
+  border-radius: 20px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  color: #9ad890;
+  font-weight: 500;
+}
+
+.about-value-icon {
+  font-size: 1rem;
+}

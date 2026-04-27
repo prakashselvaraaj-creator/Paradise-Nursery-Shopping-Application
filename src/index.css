@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;900&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0a1a0a;
+  color: #c8e8c0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+:root {
+  --green-bright: #56d364;
+  --green-mid: #2ea043;
+  --green-dark: #0a1a0a;
+  --text-primary: #e8ffd8;
+  --text-secondary: #a8c8a0;
+  --text-muted: #7aaa70;
+}
+
+img { display: block; max-width: 100%; }
+
+button { font-family: inherit; }
+
+a { color: inherit; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0d1f0d; }
+::-webkit-scrollbar-thumb {
+  background: rgba(86, 211, 100, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(86, 211, 100, 0.45);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(86, 211, 100, 0.3);
+  color: #e8ffd8;
+}

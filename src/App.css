@@ -1,0 +1,183 @@
+/* ============================================================
+   App.css — Paradise Nursery Landing Page Background & Layout
+   ============================================================ */
+
+/* ── Landing Page ── */
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Background image for the Paradise Nursery landing page */
+  background-image: url('/hero_background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Dark overlay for readability */
+.landing-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(5, 18, 5, 0.82) 0%,
+    rgba(10, 30, 10, 0.65) 50%,
+    rgba(5, 20, 5, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+/* Floating leaf particles */
+.landing-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  font-size: clamp(0.8rem, 1.5vw, 1.4rem);
+  opacity: 0;
+  animation: float-up calc(8s + var(--i) * 0.7s) ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.6s);
+  left: calc(var(--i) * 8.5%);
+  filter: drop-shadow(0 0 4px rgba(120, 220, 80, 0.5));
+}
+
+@keyframes float-up {
+  0%   { opacity: 0; transform: translateY(100vh) rotate(0deg); }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-20vh) rotate(360deg); }
+}
+
+/* Main content container */
+.landing-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  max-width: 820px;
+  width: 100%;
+  animation: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Badge */
+.landing-badge {
+  display: inline-block;
+  background: rgba(86, 211, 100, 0.12);
+  border: 1px solid rgba(86, 211, 100, 0.3);
+  color: #7de87d;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+}
+
+/* Company name — h1 */
+.landing-title {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.0;
+  margin: 0 0 1.8rem;
+}
+
+.title-line1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 900;
+  color: #e8ffd8;
+  text-shadow: 0 0 40px rgba(120, 240, 80, 0.25), 0 4px 30px rgba(0,0,0,0.5);
+  letter-spacing: -0.02em;
+}
+
+.title-line2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #56d364 0%, #a8f08c 50%, #56d364 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 0 20px rgba(86, 211, 100, 0.4));
+}
+
+/* About section spacing */
+.landing-about {
+  margin-bottom: 2.5rem;
+}
+
+/* Get Started button */
+.get-started-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 2.6rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #56d364, #2ea043);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  box-shadow: 0 8px 30px rgba(46, 160, 67, 0.45);
+  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 8px 30px rgba(46, 160, 67, 0.45), 0 0 0 0 rgba(86, 211, 100, 0.4); }
+  50%       { box-shadow: 0 8px 30px rgba(46, 160, 67, 0.55), 0 0 0 14px rgba(86, 211, 100, 0); }
+}
+
+.get-started-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #6adf74, #39c354);
+  box-shadow: 0 14px 40px rgba(46, 160, 67, 0.6);
+  animation: none;
+}
+
+.get-started-btn:active { transform: scale(0.97); }
+
+/* Scroll hint */
+.landing-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  color: rgba(168, 200, 160, 0.6);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.landing-scroll-hint svg { width: 16px; height: 16px; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
+@media (max-width: 600px) {
+  .landing-content { padding: 2rem 1rem; }
+}
